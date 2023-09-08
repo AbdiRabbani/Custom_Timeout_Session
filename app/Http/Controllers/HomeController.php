@@ -37,6 +37,8 @@ class HomeController extends Controller
             'name' => $response['name'],
             'email' => $response['email'],
             'level' => $response['level'],
+            'position' => $response['position'],
+            'division' => $response['division'],
             'password' => Hash::make($response['password']),
         ];
         User::create($data);

@@ -11,10 +11,23 @@
                     <input type="text" name="name" class="form-control">
                     <label for="">Email</label>
                     <input type="email" name="email" class="form-control">
-                    <label for="">level</label>
+                    <label for="">Level</label>
                     <select name="level" id="" class="form-control">
                         <option value="admin">Admin</option>
                         <option value="user">User</option>
+                        <option value="guest">Guest</option>
+                    </select>
+                    <label for="">Position</label>
+                    <select name="position" id="" class="form-control">
+                        <option value="FE">FE</option>
+                        <option value="BE">BE</option>
+                        <option value="UI">UI</option>
+                    </select>
+                    <label for="">Division</label>
+                    <select name="division" id="" class="form-control">
+                        <option value="BCD">BCD</option>
+                        <option value="MSM">MSM</option>
+                        <option value="PMO">PMO</option>
                     </select>
                     <label for="">Password</label>
                     <input type="text" name="password" class="form-control">

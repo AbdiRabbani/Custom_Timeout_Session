@@ -15,12 +15,20 @@ class CustomSessionTimeout
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->user()->level == 'admin') {
-            config(['session.lifetime' => 180]); // Menit
-        } else if (auth()->user()->level == 'user'){
-            config(['session.lifetime' => 1]); // Menit
+        $condition1 = Auth()->user()->level == 'admin'; 
+        $condition2 = Auth()->user()->division == 'BCD'; 
+        $condition3 = Auth()->user()->position == 'BE';
+
+
+        if ($condition1 && $condition2 && $condition3) {
+            $sessionLifetime = 180;
+        } else {
+            $sessionLifetime = 1; 
         }
-    
-        return $next($request);
-    }
+
+        // Mengatur waktu habis sesi berdasarkan kondisi
+        config(['session.lifetime' => $sessionLifetime]);
+
+        return $next($request);      
+        }
 }
