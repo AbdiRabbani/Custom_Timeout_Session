@@ -30,5 +30,5 @@ class CustomSessionTimeout
         config(['session.lifetime' => $sessionLifetime]);
 
         return $next($request);      
-        }
+    }
 }
